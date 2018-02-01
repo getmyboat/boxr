@@ -13,7 +13,7 @@ $ pip install boxr
 
 ## Usage
 
-```python
+```py
 
-I HAVEN'T ACTUALLY WRITTEN ANYTHING YET
+x = 1 + 1
 ```
