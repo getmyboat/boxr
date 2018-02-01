@@ -1,4 +1,5 @@
 import requests
+from datetime import date
 
 
 def coerce_date(d):
@@ -7,8 +8,11 @@ def coerce_date(d):
     format (which is as of today yyyy-mm-dd).
     '''
     if isinstance(d, str):
+        # You best be hopin you not done screwed this up
         return d
-    return 'yyyy-mm-dd'
+    if isinstance(d, date):
+        return date.strftime(d, '%Y-%m-%d')
+    return d
 
 
 class Boxr:

@@ -26,7 +26,7 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     keywords='foreign exchange rates',
-    packages='boxr',
+    packages=['boxr'],
     install_requires=['requests'],
-    tests_require=[],
+    tests_require=['pytest'],
 )
