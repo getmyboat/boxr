@@ -24,7 +24,7 @@ class Boxr:
 
     def get(self, url, **kwargs):
         """
-        Get from the Open Exchange Rates API.
+        GET from the Open Exchange Rates API.
 
         Function signature matches that of requests.get().
         """
