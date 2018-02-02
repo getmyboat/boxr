@@ -41,10 +41,8 @@ class Boxr:
         if 'symbols' in kwargs:
             # Allow sending symbols as a list
             kwargs['symbols'] = coerce_symbols(kwargs['symbols'])
-        return self.session.get(
-            self.base + url,
-            params={**kwargs, **{'app_id': self.app_id}}
-        )
+        kwargs['app_id'] = self.app_id
+        return self.session.get(self.base + url, params=kwargs)
 
     def latest(self, **kwargs):
         '''
