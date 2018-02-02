@@ -1,7 +1,7 @@
 from datetime import date
 from unittest.mock import MagicMock
 
-from . import coerce_date, Boxr
+from . import coerce_date, coerce_symbols, Boxr
 
 
 def get_test_client_and_session():
@@ -17,6 +17,10 @@ def test_coercing_a_string():
 
 def test_coercing_a_date():
     assert coerce_date(date(2017, 1, 1)) == '2017-01-01'
+
+
+def test_coercing_symbols_from_list():
+    assert coerce_symbols(['USD', 'EUR', 'CAD']) == 'USD,EUR,CAD'
 
 
 def test_get_calls_session_get():

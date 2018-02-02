@@ -39,3 +39,8 @@ latest = boxr.latest()
 # And thus we get the json
 result = latest.json()
 ```
+
+## Contributing
+
+I would like this package to always be up to date with the OXR http API. If this
+is someday not the case please open a Pull Request or open an issue about the noncompliance.

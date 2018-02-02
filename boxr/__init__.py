@@ -15,6 +15,12 @@ def coerce_date(d):
     return d
 
 
+def coerce_symbols(symbols):
+    if isinstance(symbols, list):
+        return ','.join(symbols)
+    return symbols
+
+
 class Boxr:
     base = 'https://openexchangerates.org/api/'
     # Declare as class var to avoid unnecessary session instantiation
@@ -32,6 +38,9 @@ class Boxr:
 
         Function signature matches that of requests.get().
         """
+        if 'symbols' in kwargs:
+            # Allow sending symbols as a list
+            kwargs['symbols'] = coerce_symbols(kwargs['symbols'])
         return self.session.get(
             self.base + url,
             params={**kwargs, **{'app_id': self.app_id}}
