@@ -1,4 +1,4 @@
-import requests
+from requests import Session
 from datetime import date
 
 
@@ -20,7 +20,7 @@ class Boxr:
 
     def __init__(self, app_id):
         self.app_id = app_id
-        self.session = requests.Session()
+        self.session = Session()
 
     def get(self, url, **kwargs):
         """
@@ -30,7 +30,7 @@ class Boxr:
         """
         return self.session.get(
             self.base + url,
-            **{**kwargs, **{'app_id': self.app_id}}
+            params={**kwargs, **{'app_id': self.app_id}}
         )
 
     def latest(self, **kwargs):
