@@ -10,7 +10,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='boxr',
-    version='1.0.0.dev1',
+    version='1.0.0.dev2',
     description='An Open Exchange Rate Client',
     long_description=long_description,
     url='https://github.com/getmyboat/boxr',
