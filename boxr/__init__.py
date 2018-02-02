@@ -35,8 +35,6 @@ class Boxr:
     def get(self, url, **kwargs):
         """
         GET from the Open Exchange Rates API.
-
-        Function signature matches that of requests.get().
         """
         if 'symbols' in kwargs:
             # Allow sending symbols as a list
