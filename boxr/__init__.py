@@ -17,10 +17,14 @@ def coerce_date(d):
 
 class Boxr:
     base = 'https://openexchangerates.org/api/'
+    # Declare as class var to avoid unnecessary session instantiation
+    session = Session()
 
-    def __init__(self, app_id):
+    def __init__(self, app_id, session=None):
         self.app_id = app_id
-        self.session = Session()
+        if session:
+            # Allow injection
+            self.session = session
 
     def get(self, url, **kwargs):
         """
