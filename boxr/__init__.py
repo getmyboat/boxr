@@ -64,7 +64,7 @@ class Boxr:
         '''
         see https://docs.openexchangerates.org/docs/time-series-json
         '''
-        self.get('time-series.json', **kwargs)
+        return self.get('time-series.json', **kwargs)
 
     def convert(self, value, frum, to, **kwargs):
         '''
